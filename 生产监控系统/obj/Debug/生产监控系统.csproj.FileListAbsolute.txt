@@ -15,7 +15,6 @@ D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Deb
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\App.baml
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\MonitorUC.g.cs
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\MonitorUC.baml
-D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\生产监控系统.csproj.AssemblyReference.cache
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.dll
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.Wpf.dll
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.pdb
@@ -26,3 +25,6 @@ D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Deb
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RaderUC.g.cs
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RaderUC.baml
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\WorkShopDetailUC.g.cs
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\WorkShopDetailUC.baml
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\生产监控系统.csproj.AssemblyReference.cache

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
+using 生产监控系统.Command;
 using 生产监控系统.Models;
 using 生产监控系统.UserControls;
 
@@ -121,6 +123,11 @@ namespace 生产监控系统.ViewModels
             WorkShopModels.Add(new WorkShopModel() { WorkShopName = "焊接车间", WorkingCount =32, WaitingCount =10, WrongCount =4, StopCount =10});
             WorkShopModels.Add(new WorkShopModel() { WorkShopName = "贴片车间", WorkingCount =68, WaitingCount=8, WrongCount =4, StopCount =0});
             #endregion
+
+            #region 实例化ICommand
+            //ShowCommand = new DetailCommand(showShopDetail);
+            #endregion
+
         }
 
         private UserControl _MonitorUC;
@@ -303,7 +310,6 @@ namespace 生产监控系统.ViewModels
 
         #endregion
 
-
         #region 车间数据
         private List<WorkShopModel> _WorkShopModels;
 
@@ -321,6 +327,28 @@ namespace 生产监控系统.ViewModels
 
 
         #endregion
+
+
+
+        ///// <summary>
+        ///// 把事件绑定放在ViewModel中不起作用，不知道为啥？只能移动到MainWindow
+        ///// </summary>
+        ////定义事件
+        //public void showShopDetail()
+        //{
+        //    this.MonitorUC = new WorkShopDetailUC();
+        //}
+        ////绑定事件
+        //public ICommand ShowCommand { get; private set; }
+
+        //public ICommand ShowCommand
+        //{
+        //    get
+        //    {
+        //        return new DetailCommand(showShopDetail);
+        //    }
+        //}
+
 
     }
 }

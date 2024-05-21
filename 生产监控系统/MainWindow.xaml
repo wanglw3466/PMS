@@ -74,8 +74,7 @@
      
         <!--第二行内容 用户控件并嵌入到主界面-->
         <!--绑定自定义控件，使用contentcontrol-->
-        <ContentControl Grid.Row="1" Content="{Binding MonitorUC}">
-            
+        <ContentControl Grid.Row="1" Content="{Binding MonitorUC}">            
         </ContentControl>
         <!--第三行底部-->
         <Border BorderThickness="0,1,0,0" Grid.Row="2" BorderBrush="#5518aabd">

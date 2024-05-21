@@ -402,7 +402,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="{Binding WorkShopName}" Grid.Row="0" Grid.Column="0" Foreground="#18aabd" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
                             <TextBlock  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Foreground="White" VerticalAlignment="Center">
-                                <Hyperlink Foreground="White" TextDecorations="None">[详情]</Hyperlink>
+                                <Hyperlink Foreground="White" TextDecorations="None" Command="{Binding ShowCommand,RelativeSource={RelativeSource AncestorType=Window}}">[详情]</Hyperlink>
                             </TextBlock>
                             <StackPanel Grid.Row="1" Grid.Column="0">
                                 <TextBlock Text="机台总数" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" ></TextBlock>
