@@ -37,8 +37,8 @@ namespace 生产监控系统.UserControls
         private void DrawRing()
         {
              //1.获取渲染器长 宽最小值，设置Grid 值（这个图就画在这个Grid）
-             LayoutGrid.Width=Math.Min(RenderSize.Width,RenderSize.Height);
-             LayoutGrid.Height=Math.Min(RenderSize.Width,RenderSize.Height);
+           LayoutGrid.Width=Math.Min(RenderSize.Width,RenderSize.Height) ;
+          // LayoutGrid.Height=Math.Min(RenderSize.Width,RenderSize.Height);
 
             //2. 定义半径 radius;
             double radius = LayoutGrid.Width / 2;

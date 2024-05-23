@@ -46,14 +46,61 @@
             <RadioButton Content="故障"></RadioButton>
             <RadioButton Content="停机"></RadioButton>
         </StackPanel>
-        <Border Background="#1118aabd" Grid.Row="1" Margin="10,5"></Border>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <local:RingUC  Percent="50" Grid.Row="0"></local:RingUC>
-        </Grid>
+        <!--<Border Background="Red"  Margin="10,5">-->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+               <ItemsControl ItemsSource="{Binding MachineList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                            <UniformGrid Columns="5"></UniformGrid>                     
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#9918aabd" x:Name="border" Background="#0a18aabd" BorderThickness="0,1,0,0" Height="260" Margin="10,5">
+                         <Grid  >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="22"></RowDefinition>
+                                <RowDefinition  ></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                                <RowDefinition Height="22"></RowDefinition>
+                            </Grid.RowDefinitions>
+                                <TextBlock FontSize="11" Grid.Row="0" HorizontalAlignment="Left" Margin="5,0">
+                                <Run Text="&#xe60d;" Foreground="White" FontFamily="../Resource/Fonts/#iconfont"></Run>
+                                <Run Text="{Binding MachineName}" Foreground="#99ffffff" ></Run>
+                                </TextBlock>
+                                <TextBlock  FontSize="11" Foreground="LightGreen" Grid.Row="0" HorizontalAlignment="Right" Margin="5,0,10,0">
+                                    <Run Text="&#xe606;" FontFamily="../Resource/fonts/#iconfont"  ></Run>
+                                    <Run Text="{Binding MachineStatus}"></Run>
+                                </TextBlock>
+                                <local:RingUC Grid.Row="1" Percent="{Binding Percent}"   ></local:RingUC>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                    <TextBlock Text="任务状态:" Foreground="#55ffffff" HorizontalAlignment="Center" FontSize="11" Margin="5,0" ></TextBlock>
+                                    <Label Content="{Binding MachineStatus}" Foreground="LightGreen" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" BorderThickness="1" Padding="5,1" BorderBrush="LightGreen"></Label>
+                                </StackPanel>
+                                <TextBlock HorizontalAlignment="Right" Grid.Row="2" Margin="0,0,10,0"><Hyperlink Foreground="#55ffffff" TextDecorations="None" >[详情]</Hyperlink></TextBlock>
+                                
+                               <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                    <TextBlock Text="任务进度:" Foreground="#55ffffff" FontSize="11" Margin="5,0"></TextBlock>
+                                    <TextBlock  Foreground="White" FontSize="11">
+                                        <Run Text="{Binding PlanCount}"></Run>
+                                        <Run Text="/"></Run>
+                                        <Run Text="{Binding FinishedCount}"></Run>
+                                    </TextBlock>
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                    <TextBlock Text="工单:" FontSize="11" Foreground="#55ffffff" Margin="5,0"></TextBlock>
+                                    <TextBlock Text="{Binding Order}"  Foreground="White" FontSize="11"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                   
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>                        
+            </ScrollViewer>
+        <!--</Border>-->
+
         
     </Grid>
 </UserControl>

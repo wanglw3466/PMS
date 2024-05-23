@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using 生产监控系统.Command;
+using 生产监控系统.DB.DAL;
 using 生产监控系统.Models;
 using 生产监控系统.UserControls;
 
@@ -40,8 +42,8 @@ namespace 生产监控系统.ViewModels
                 );
             EnvironmentModel.Add(new EnvironmentModel()
             {
-                environmentName="温度(℃)",
-                environmentValue=80
+                environmentName = "温度(℃)",
+                environmentValue = 80
             });
 
             EnvironmentModel.Add(new EnvironmentModel()
@@ -58,13 +60,13 @@ namespace 生产监控系统.ViewModels
 
             EnvironmentModel.Add(new EnvironmentModel()
             {
-                environmentName="硫化氢(PPM)",
-                environmentValue=123
+                environmentName = "硫化氢(PPM)",
+                environmentValue = 123
             });
             EnvironmentModel.Add(new EnvironmentModel()
             {
                 environmentName = "氮气(ppm)",
-                environmentValue=18
+                environmentValue = 18
             });
 
             EnvironmentModel.Add(new EnvironmentModel()
@@ -89,39 +91,39 @@ namespace 生产监控系统.ViewModels
             #endregion
             #region 初始化设备数据
             DeviceModels = new List<DeviceModel>();
-            DeviceModels.Add(new DeviceModel() { paraName="电能(Kw.h)",paraValue="60.8" });
-            DeviceModels.Add(new DeviceModel() { paraName="电压(V)",paraValue="390" });
+            DeviceModels.Add(new DeviceModel() { paraName = "电能(Kw.h)", paraValue = "60.8" });
+            DeviceModels.Add(new DeviceModel() { paraName = "电压(V)", paraValue = "390" });
             DeviceModels.Add(new DeviceModel() { paraName = "压差(kpa)", paraValue = "13" });
             DeviceModels.Add(new DeviceModel() { paraName = "温度(℃)", paraValue = "36" });
-            DeviceModels.Add(new DeviceModel() { paraName="震动(mm/s)",paraValue="4.1"});
-            DeviceModels.Add(new DeviceModel() {paraName="转速(r/m)",paraValue="2600" });
-            DeviceModels.Add(new DeviceModel() { paraName="气压(kpa)",paraValue="0.5"});
+            DeviceModels.Add(new DeviceModel() { paraName = "震动(mm/s)", paraValue = "4.1" });
+            DeviceModels.Add(new DeviceModel() { paraName = "转速(r/m)", paraValue = "2600" });
+            DeviceModels.Add(new DeviceModel() { paraName = "气压(kpa)", paraValue = "0.5" });
             #endregion
             #region 初始化雷达数据
             RaderModels = new List<RaderModel>();
-            RaderModels.Add(new RaderModel() { ItemName="排烟风机", Value=90 });
-            RaderModels.Add(new RaderModel() { ItemName="客梯",Value=30.00});
+            RaderModels.Add(new RaderModel() { ItemName = "排烟风机", Value = 90 });
+            RaderModels.Add(new RaderModel() { ItemName = "客梯", Value = 30.00 });
             RaderModels.Add(new RaderModel() { ItemName = "供水机", Value = 34.89 });
-            RaderModels.Add(new RaderModel() {ItemName="喷淋水泵",Value=69.59 });
+            RaderModels.Add(new RaderModel() { ItemName = "喷淋水泵", Value = 69.59 });
             RaderModels.Add(new RaderModel() { ItemName = "稳压设备", Value = 20 });
             //RaderModels.Add(new RaderModel() { ItemName = "稳压设备6", Value =65});
             #endregion
 
             #region 初始化缺岗数据
             StaffOutWorkModels = new List<StaffOutWorkModel>();
-            StaffOutWorkModels.Add(new StaffOutWorkModel() {  StaffName="张婷婷", StaffPosition="技术员", OutWorkCount=123});
+            StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "张婷婷", StaffPosition = "技术员", OutWorkCount = 123 });
             StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "李晓", StaffPosition = "操作员", OutWorkCount = 23 });
-            StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "王克俭", StaffPosition = "技术员", OutWorkCount=134 });
+            StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "王克俭", StaffPosition = "技术员", OutWorkCount = 134 });
             StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "陈家栋", StaffPosition = "统计员", OutWorkCount = 143 });
-            StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName="杨过",StaffPosition="技术员",OutWorkCount=12});
+            StaffOutWorkModels.Add(new StaffOutWorkModel() { StaffName = "杨过", StaffPosition = "技术员", OutWorkCount = 12 });
             #endregion
 
             #region 初始化车间数据
             WorkShopModels = new List<WorkShopModel>();
-            WorkShopModels.Add(new WorkShopModel() { WorkShopName="贴片车间",WorkingCount=32,WaitingCount=8, WrongCount=4,StopCount=0});
-            WorkShopModels.Add(new WorkShopModel() { WorkShopName= "封装车间", WorkingCount =20, WaitingCount =8, WrongCount =4, StopCount =0});
-            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "焊接车间", WorkingCount =32, WaitingCount =10, WrongCount =4, StopCount =10});
-            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "贴片车间", WorkingCount =68, WaitingCount=8, WrongCount =4, StopCount =0});
+            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "贴片车间", WorkingCount = 32, WaitingCount = 8, WrongCount = 4, StopCount = 0 });
+            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "封装车间", WorkingCount = 20, WaitingCount = 8, WrongCount = 4, StopCount = 0 });
+            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "焊接车间", WorkingCount = 32, WaitingCount = 10, WrongCount = 4, StopCount = 10 });
+            WorkShopModels.Add(new WorkShopModel() { WorkShopName = "贴片车间", WorkingCount = 68, WaitingCount = 8, WrongCount = 4, StopCount = 0 });
             #endregion
 
             #region 实例化ICommand
@@ -129,14 +131,30 @@ namespace 生产监控系统.ViewModels
             #endregion
             #region 初始化机器信息
             MachineList = new List<MachineInfo>();
-
-
+            string queryStr = "select machine_name,status,plan_count,finished_count,order_id from machine_info";
+            MySqlConnection con = SqlCon.GetConnectionInstance();
+            using (MySqlCommand command = new MySqlCommand(queryStr, con))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var info = new MachineInfo
+                        //使用大括号 简化写法；
+                        {
+                            MachineName = reader["machine_name"].ToString(),
+                            MachineStatus = reader["status"].ToString(),
+                            PlanCount = int.Parse(reader["plan_count"].ToString()),
+                            FinishedCount = int.Parse(reader["finished_count"].ToString()),
+                            Order = reader["order_id"].ToString(),
+                        };
+                        MachineList.Add(info);
+                    }
+                }
+            } 
             #endregion
-
-
-
-
-        }
+            }
+        
 
         private UserControl _MonitorUC;
         public UserControl MonitorUC
