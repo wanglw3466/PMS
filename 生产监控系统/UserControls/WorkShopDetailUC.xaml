@@ -6,7 +6,54 @@
              xmlns:local="clr-namespace:生产监控系统.UserControls"
              mc:Ignorable="d" 
              Height="585" Width="1200">
-    <Grid Background="Red">
+    <UserControl.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="Background" Value="#ddd"></Setter>
+            <Setter Property="Foreground" Value="#888"></Setter>
+            <Setter Property="Width" Value="50"></Setter>
+            <Setter Property="Height" Value="22"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="border"   Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger   Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="orange"></Setter>
+                                <Setter Property="Foreground" Value="White"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Background="#1118aabd" Grid.Row="0" Margin="10,5">
+            <Button Content="返回" Tag="&#xe610;" Style="{StaticResource BtnStyle}"  Width="70"  Height="30" HorizontalAlignment="Left" Command="{Binding ReturnCommand,RelativeSource={RelativeSource AncestorType=Window}}"></Button>
+        </Border>
+        <StackPanel Grid.Row="0"   Orientation="Horizontal" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="0,0,10,0">
+            <TextBlock Text="机器状态:" Foreground="White"   Margin="0,0,5,0"  VerticalAlignment="Center"></TextBlock>
+            <RadioButton Content="全部" IsChecked="True"></RadioButton>
+            <RadioButton Content="工作"></RadioButton>
+            <RadioButton Content="待机"></RadioButton>
+            <RadioButton Content="故障"></RadioButton>
+            <RadioButton Content="停机"></RadioButton>
+        </StackPanel>
+        <Border Background="#1118aabd" Grid.Row="1" Margin="10,5"></Border>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:RingUC  Percent="50" Grid.Row="0"></local:RingUC>
+        </Grid>
+        
     </Grid>
 </UserControl>

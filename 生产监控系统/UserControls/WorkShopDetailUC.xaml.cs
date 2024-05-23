@@ -24,5 +24,7 @@ namespace 生产监控系统.UserControls
         {
             InitializeComponent();
         }
+
+
     }
 }

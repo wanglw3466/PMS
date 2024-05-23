@@ -21,10 +21,12 @@ D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Deb
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.xml
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.Wpf.pdb
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\bin\Debug\LiveCharts.Wpf.xml
-D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\生产监控系统.csproj.CopyComplete
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RaderUC.g.cs
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RaderUC.baml
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\WorkShopDetailUC.g.cs
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\WorkShopDetailUC.baml
 D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\生产监控系统.csproj.AssemblyReference.cache
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\生产监控系统.csproj.Up2Date
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RingUC.g.cs
+D:\项目\B-上海果纳\WPF学习\生产监控系统\生产监控系统\obj\Debug\UserControls\RingUC.baml

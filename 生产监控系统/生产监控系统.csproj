@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\DetailCommand.cs" />
+    <Compile Include="Command\BtnCommand.cs" />
     <Compile Include="Models\AlarmModel.cs" />
     <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Models\EnvironmentModel.cs" />
@@ -74,11 +74,18 @@
     <Compile Include="UserControls\RaderUC.xaml.cs">
       <DependentUpon>RaderUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RingUC.xaml.cs">
+      <DependentUpon>RingUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WorkShopDetailUC.xaml.cs">
       <DependentUpon>WorkShopDetailUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainVeiwModel.cs" />
     <Page Include="UserControls\RaderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

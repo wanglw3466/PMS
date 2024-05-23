@@ -7,14 +7,14 @@ using System.Windows.Input;
 
 namespace 生产监控系统.Command
 {
-    public class DetailCommand : ICommand
+    public class BtnCommand : ICommand
 
     {
         //定义一个无参数，无返回值 接口函数；
         private Action _Action;
 
         //初始化构造函数
-        public DetailCommand(Action action)
+        public BtnCommand(Action action)
         {
             this._Action = action;
         }

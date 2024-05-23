@@ -42,15 +42,15 @@ namespace 生产监控系统
             mainViewModel.MonitorUC = workShopDetailUC;
 
             //1.定义动画 动画效果 自下而上 位移 移动时间
-            ThicknessAnimation thicknessAnimation = new ThicknessAnimation(new Thickness(0, 150, 0, -150), new Thickness(0, 0, 0, 0), new TimeSpan(0,0,0,0,400));
+            ThicknessAnimation thicknessAnimation = new ThicknessAnimation(new Thickness(0, 150, 0, -150), new Thickness(0, 0, 0, 0), new TimeSpan(0, 0, 0, 0, 400));
             //2.定义透明度
-            DoubleAnimation doubleAnimation = new DoubleAnimation(0,1,new TimeSpan(0,0,0,0,400));
+            DoubleAnimation doubleAnimation = new DoubleAnimation(0, 1, new TimeSpan(0, 0, 0, 0, 400));
 
             //3.把动画，透明度加载到storyboard
-            Storyboard.SetTarget(thicknessAnimation,workShopDetailUC);
+            Storyboard.SetTarget(thicknessAnimation, workShopDetailUC);
             Storyboard.SetTarget(doubleAnimation, workShopDetailUC);
 
-            Storyboard.SetTargetProperty(thicknessAnimation,new PropertyPath("Margin"));
+            Storyboard.SetTargetProperty(thicknessAnimation, new PropertyPath("Margin"));
             Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath("Opacity"));
 
             Storyboard storyboard = new Storyboard();
@@ -65,9 +65,22 @@ namespace 生产监控系统
         {
             get
             {
-                return new DetailCommand(showShopDetail);
+                return new BtnCommand(showShopDetail);
             }
         }
+        //返回功能；
+        public ICommand ReturnCommand
+        {
+            get
+            {
+                return new BtnCommand(returnFn);
+            }
 
+        }
+        private void returnFn()
+        {
+            MonitorUC monitorUC=new MonitorUC();
+            mainViewModel.MonitorUC = monitorUC;    
+        }
     }
 }
