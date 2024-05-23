@@ -127,6 +127,14 @@ namespace 生产监控系统.ViewModels
             #region 实例化ICommand
             //ShowCommand = new DetailCommand(showShopDetail);
             #endregion
+            #region 初始化机器信息
+            MachineList = new List<MachineInfo>();
+
+
+            #endregion
+
+
+
 
         }
 
@@ -328,6 +336,24 @@ namespace 生产监控系统.ViewModels
 
         #endregion
 
+        #region 机器信息
+
+        private List<MachineInfo> _MachineList;
+
+        public List<MachineInfo> MachineList    
+        {
+            get { return _MachineList; }
+            set {
+                _MachineList =value; 
+                if(PropertyChanged!=null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("MachineList"));
+                }
+            }
+        }
+
+        
+        #endregion
 
 
         ///// <summary>

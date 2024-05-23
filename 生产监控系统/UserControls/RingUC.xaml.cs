@@ -47,9 +47,10 @@ namespace 生产监控系统.UserControls
             double y = radius+(radius-3)*Math.Sin((Percent%100*3.6-90)*Math.PI/180);
             //4. 定义轨迹数据；
             int is50 = Percent >= 50 ? 1 : 0;
+            //M 移动  A 画弧半径 {radius-3} {radius-3} |  移动路径 0 {is50} 1 {x} {y}
             string pathStr = $"M{radius+0.03} 3A{radius-3} {radius-3} 0 {is50} 1 {x} {y}";
 
-            //5. 定义绘图
+            //5.几何图形对象 定义绘图
             var conventer= TypeDescriptor.GetConverter(typeof(Geometry));
             //6.开始绘图；
             Path.Data = (Geometry)conventer.ConvertFrom(pathStr);

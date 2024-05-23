@@ -10,12 +10,12 @@
     <Grid x:Name="LayoutGrid">
             
         <!--2.先画个椭圆-->
-        <Ellipse StrokeThickness="1" Stroke="Aqua" ></Ellipse>
+        <Ellipse StrokeThickness="8" Stroke="#22ffffff" Width="{Binding ElementName=LayoutGrid,Path=ActualWidth}" Height="{Binding ElementName=LayoutGrid,Path=ActualHeight}" ></Ellipse>
         <!--3.涂色-->
-        <Path x:Name="Path" StrokeThickness="7" Stroke="Orange"></Path>
+        <Path x:Name="Path" StrokeThickness="7" Stroke="Orange" StrokeStartLineCap="Round" StrokeEndLineCap="Round"></Path>
         <!--4.显示百分比-->
         <TextBlock  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Run Text="{Binding Percent,RelativeSource={RelativeSource AncestorType=UserControl},StringFormat={}{0:#}}" FontSize="22"></Run>
+            <Run Text="{Binding Percent,RelativeSource={RelativeSource AncestorType=UserControl},StringFormat={}{0:#}}" FontSize="16"></Run>
             <Run Text="%" ></Run>
         </TextBlock>
     </Grid>
