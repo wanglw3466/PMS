@@ -55,9 +55,9 @@
                 </Grid.RowDefinitions>
                 <!--第一行放3个按钮，横向排列，且靠右-->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" WindowChrome.IsHitTestVisibleInChrome="True"> <!--设置所有按钮，当鼠标放上去，变颜色-->
-                    <Button x:Name="min" Content="&#xe629;" Style="{StaticResource OptBtnStyleDic}"></Button>
-                    <Button x:Name="default" Content="&#xe63d;" Style="{StaticResource OptBtnStyleDic}"></Button>
-                    <Button x:Name="max" Content="&#xe605;" Style="{StaticResource OptBtnStyleDic}" Background="DarkRed"></Button>
+                    <Button x:Name="min" Content="&#xe629;" Style="{StaticResource OptBtnStyleDic}" Click="min_Click"></Button>
+                    <Button x:Name="default" Content="&#xe63d;" Style="{StaticResource OptBtnStyleDic}" Click="default_Click"></Button>
+                    <Button x:Name="close" Content="&#xe605;" Style="{StaticResource OptBtnStyleDic}" Background="DarkRed"  Click="close_Click"></Button>
                 </StackPanel>
                 <Border Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="#5518aabd">
                     <Border.Background>

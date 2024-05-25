@@ -22,13 +22,15 @@ namespace 生产监控系统.Models
         //工单
         public string Order { get; set; }
 
-        //完成百分比
-        public double Percent
-        {
-            get
-            {
-                return FinishedCount * 100 / PlanCount;
-            }
-        }
+        //完成百分比  采用简化写法
+        public double Percent => FinishedCount * 100.0 / PlanCount;
+
+        //public double Percent
+        //{
+        //    get
+        //    {
+        //        return FinishedCount * 100 / PlanCount;
+        //    }
+        //}
     }
 }

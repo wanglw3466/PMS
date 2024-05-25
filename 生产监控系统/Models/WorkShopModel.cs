@@ -23,14 +23,15 @@ namespace 生产监控系统.Models
         //停机数量
         public int StopCount { get; set; }
 
-        //总数量(只读属性)
-        public int TotalCount
-        {
-            get
-            {
-                return WorkingCount + WaitingCount + WrongCount + StopCount;
-            }
-        }
+        //总数量(只读属性) 采用简略写法
+        public int TotalCount =>  WorkingCount+WaitingCount+WrongCount+StopCount;
+        //public int TotalCount
+        //{
+        //    get
+        //    {
+        //        return WorkingCount + WaitingCount + WrongCount + StopCount;
+        //    }
+        //}
 
     }
 }
