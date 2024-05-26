@@ -135,6 +135,9 @@
       <DependentUpon>WorkShopDetailUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainVeiwModel.cs" />
+    <Compile Include="Views\SettingWin.xaml.cs">
+      <DependentUpon>SettingWin.xaml</DependentUpon>
+    </Compile>
     <Page Include="UserControls\RaderUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\WorkShopDetailUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,7 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DB\Bll\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\device.png" />
