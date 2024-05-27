@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using 生产监控系统.Command;
 using 生产监控系统.UserControls;
 using 生产监控系统.ViewModels;
+using 生产监控系统.Views;
 
 namespace 生产监控系统
 {
@@ -152,6 +153,27 @@ namespace 生产监控系统
         {
             //this.close() 仅关闭窗口
             Environment.Exit(0); //退出程序；
+        }
+
+
+        
+
+        public ICommand ShowDetailCommand
+        {
+            get { return new BtnCommand(ShowDetail); }
+           
+        }
+
+        /// <summary>
+        /// 显示细节功能
+        /// </summary>
+        public void ShowDetail()
+        {
+            //1.建立父子关系
+            //2.实例化SettingWin窗口 设置owner=this;
+            SettingWin settingWin=new SettingWin() { Owner=this}; //设置Settingwin当前窗口为主窗口
+            //3.使用showdialog
+            settingWin.ShowDialog();
         }
     }
 }

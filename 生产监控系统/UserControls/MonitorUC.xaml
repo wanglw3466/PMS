@@ -120,7 +120,7 @@
             </StackPanel>
       
        <!--配置按钮 触发器 渐进色-->
-            <Button HorizontalAlignment="Right" Style="{StaticResource BtnStyle }" Grid.Column="1" Height="20" Width="60" VerticalAlignment="Center" Margin="10,0" Content="配置" Tag="&#xe630;"></Button>
+            <Button HorizontalAlignment="Right" Style="{StaticResource BtnStyle }" Grid.Column="1" Height="20" Width="60" VerticalAlignment="Center" Margin="10,0" Content="配置" Tag="&#xe630;" Command="{Binding ShowDetailCommand,RelativeSource={RelativeSource AncestorType=Window}}"></Button>
         </Grid>
         <!--第二行 有3列-->
         <Grid Grid.Row="1"   >

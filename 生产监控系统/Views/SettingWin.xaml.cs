@@ -23,5 +23,20 @@ namespace 生产监控系统.Views
         {
             InitializeComponent();
         }
+
+        private void data_Click(object sender, RoutedEventArgs e)
+        {
+
+            //程序集 授权 路径
+            string tag = "";
+            var btn = sender as RadioButton;
+            if (btn != null)
+            {
+                tag = btn.Tag.ToString();
+            }
+            //# 代表程序片断
+            frame.Navigate(new Uri("pack://application:,,,/生产监控系统;component/Views/SettingPage.xaml#" + tag, UriKind.RelativeOrAbsolute));
+
+        }
     }
 }
